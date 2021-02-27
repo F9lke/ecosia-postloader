@@ -32,7 +32,12 @@ def initDarwinEnv():
     with open(sSysPlistPath, "w") as sysFile:
         with open(sProjPlistPath, "r") as projFile:
             with open(sConfPath, "r") as confFile:
-                sContent = projFile.read().replace("project_path", json.loads(confFile.read())["project_path"])
+                jsonConfContent = json.loads(confFile.read())
+
+                sContent = projFile.read()
+                sContent = sContent.replace("project_path", jsonConfContent["project_path"])
+                sContent = sContent.replace("trigger_process_name", jsonConfContent["trigger_process_name"])
+
                 sysFile.write(sContent)
 
     subprocess.run(["launchctl", "load", sSysPlistPath])

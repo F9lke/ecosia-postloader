@@ -4,7 +4,7 @@ http://www.apple.com/DTDs/PropertyList-1.0.dtd>
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>test</string>
+    <string>ecosia-postloader</string>
     <key>ProgramArguments</key>
     <array>
     <string>osascript</string>
@@ -12,7 +12,7 @@ http://www.apple.com/DTDs/PropertyList-1.0.dtd>
     <string>
         tell application "System Events"
             set p to name of processes
-            if p contains "Brave Browser" then
+            if p contains "trigger_process_name" then
                 do shell script "PATH=/usr/local/bin:$PATH;(cd project_path/host/ && /usr/local/bin/npm start)"
             end if
         end tell
