@@ -1,0 +1,19 @@
+{
+  "name": "ecosia-postloader-host",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "/usr/local/bin/node server.js"
+  },
+  "author": "Florian Götzrath",
+  "license": "MIT",
+  "dependencies": {
+    "bottleneck": "^2.19.5",
+    "chromedriver": "^88.0.0",
+    "express": "^4.17.1",
+    "selenium-webdriver": "^4.0.0-beta.1",
+    "socket.io": "^3.1.1",
+    "user-agents": "^1.0.573"
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN
+http://www.apple.com/DTDs/PropertyList-1.0.dtd>
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>test</string>
+    <key>ProgramArguments</key>
+    <array>
+    <string>osascript</string>
+    <string>-e</string>
+    <string>
+        tell application "System Events"
+            set p to name of processes
+            if p contains "Brave Browser" then
+                do shell script "PATH=/usr/local/bin:$PATH;(cd project_path/host/ && /usr/local/bin/npm start)"
+            end if
+        end tell
+    </string>
+    </array>
+    <key>StartInterval</key>
+    <integer>5</integer>
+</dict>
+</plist>

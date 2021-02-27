@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Florian Götzrath">
+        
+        <title>Ecosia Postloader</title>
+
+        <link rel="stylesheet" href="./style.css" type="text/css" media="screen">
+    </head>
+    <body>
+        <header>
+            <h1>Ecosia Postloader</h1>
+            <a href="https://github.com/F9lke/ecosia-postloader" target="_blank">
+                <img src="../../assets/github-64px.png" alt="Github">
+            </a>
+        </header>
+        <section>
+            <div>
+                <span>Battery Mode</span>
+                <span class="tooltip" title="Disables ad-clicking in the background since it is a quite resource intensive task.">&#9432;</span>
+                <label class="switch float-right battery_mode_switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        <section>
+            <span>Connection to Host</span>
+            <div class="host-connection-marker float-right">&#128308;</div>
+            <div class="clearfix"></div>
+            <span>Ecosia Valid Requests</span>
+            <div class="ecosia-progress-marker float-right"></div>
+            <div class="clearfix"></div>
+        </section>
+        <section>
+            <span>Log: Clicked Ads from last Query</span>
+            <span class="ad-log-showhide float-right"><u>Show</u></span>
+            <div class="clearfix"></div>
+            <div class="ad-log-wrapper">
+                <code></code>
+            </div>
+        </section>
+
+        <script src="./content.js"></script>
+    </body>
+</html>

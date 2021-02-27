@@ -1,0 +1,27 @@
+{
+    "name": "Ecosia Postloader",
+    "version": "1.0",
+    "description": "Issues Ecosia search queries after Google ones were submitted.",
+    "background": {
+        "scripts": ["src/background_page/background.js", "src/lib/socket.io.min.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "tabs",
+        "webNavigation",
+        "*://*/*",
+        "declarativeContent",
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "src/client/index.html"
+    },
+    "content_scripts": [
+        {
+            "matches" : ["<all_urls>"],
+            "js": ["src/client/content.js"]
+        }
+    ],
+    "content_security_policy": "script-src-elem 'self'; script-src unsafe-inline data: *; connect-src 'self' http://localhost:3009/ ws://localhost:3009/ https://www.ecosia.org/;",
+    "manifest_version": 2
+  }
