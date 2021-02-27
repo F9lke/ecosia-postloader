@@ -50,6 +50,7 @@ If the user issues a Google search request with the browser extension enabled an
 
 * Battery Mode: If operating device is not charging, Selenium WebDriver is disabled
 * Rate Limit Detection: If being rate limited, disable all requests for 24 hours. Selenium WebDriver Requests permanently restricted to 1 concurrent connection and minimum time of 1s between requests.
+* Clicked Ads Log: Extension provides log about all ads clicked during the last search request
 
 ## Support
 
@@ -62,17 +63,17 @@ While the browser extension is platform independent, the automatic startup of th
 | Linux         | ❌ Not scheduled       |
 
 ### Browser
-Any browser based on the [Chromium project](https://www.chromium.org/Home), such as Google Chrome, Brave, Edge.
+Any browser based on the [Chromium project](https://www.chromium.org/Home){:target="_blank"}, such as Google Chrome, Brave, Edge.
 
 ## Requirements
 Only tested version numbers are listed.
 
-* [Node.js](https://nodejs.org/en/) (`15.4.x`)
-* [Python](https://www.python.org/downloads/) (`3.9.x`)
+* [Node.js](https://nodejs.org/en/){:target="_blank"} (`15.4.x`)
+* [Python](https://www.python.org/downloads/){:target="_blank"} (`3.9.x`)
 
 ## Setup
 ### Installation
-Note, that for at least macos the terminal has to be privileged to manipulate the file system.
+Note, that for at least MacOS the terminal has to be privileged to manipulate the file system.
 1. Clone the repository
 2. Open shell/terminal/cmd and navigate to the directory
 3. Run `python3 init.py`
