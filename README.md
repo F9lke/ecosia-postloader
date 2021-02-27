@@ -49,7 +49,7 @@ If the user issues a Google search request with the browser extension enabled an
 ### Additional Features
 
 * Battery Mode: If operating device is not charging, Selenium WebDriver is disabled
-* Rate Limit Detection: If being rate limited, disable all requests for 24 hours. Selenium WebDriver Requests permanently restricted to 1 concurrent connection and minimum time of 1s between requests.
+* Rate Limit Detection: If being rate limited, disable all requests for 24 hours. Selenium WebDriver Requests permanently restricted to 1 concurrent connection and minimum time of 1s between requests
 * Clicked Ads Log: Extension provides log about all ads clicked during the last search request
 
 ## Support
@@ -63,7 +63,7 @@ While the browser extension is platform independent, the automatic startup of th
 | Linux         | ❌ Not scheduled       |
 
 ### Browser
-Any browser based on the [Chromium project](https://www.chromium.org/Home), such as Google Chrome, Brave, Edge.
+Any browser based on the [Chromium project](https://www.chromium.org/Home), such as Google Chrome, Brave or Edge.
 
 ## Requirements
 Only tested version numbers are listed.
