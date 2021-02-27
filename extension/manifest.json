@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Issues Ecosia search queries after Google ones were submitted.",
     "background": {
-        "scripts": ["src/background_page/background.js", "src/lib/socket.io.min.js"],
+        "scripts": ["src/background_page/background.js", "lib/socket.io.min.js"],
         "persistent": false
     },
     "permissions": [
