@@ -8,7 +8,7 @@ window.onload = async () => {
     const con_marker = document.querySelector(".host-connection-marker");
     const log_area = document.querySelector("code");
 
-    // Set initivial values for ui elements
+    // Set initial values for ui elements
     chrome.storage.sync.get(null, result => {
         // Checked status for the battery mode
         if(oBattery) {
@@ -42,8 +42,10 @@ window.onload = async () => {
     });
 
     // Listen for battery mode state changes and manipulate store accordingly
-    oBattery.addEventListener("chargingchange", changeBatteryMode);
-    battery_mode_switch.addEventListener("click", changeBatteryMode);
+    if(oBattery) {
+        oBattery.addEventListener("chargingchange", changeBatteryMode);
+        battery_mode_switch.addEventListener("click", changeBatteryMode);
+    }
 
     // Clicked ads log show/hide toggle
     document.querySelector(".ad-log-showhide").onclick = () => log_area.parentElement.classList.toggle("expanded");
