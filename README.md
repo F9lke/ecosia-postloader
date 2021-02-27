@@ -63,13 +63,13 @@ While the browser extension is platform independent, the automatic startup of th
 | Linux         | ❌ Not scheduled       |
 
 ### Browser
-Any browser based on the <a href="https://www.chromium.org/Home" target="_blank">Chromium project</a>, such as Google Chrome, Brave, Edge.
+Any browser based on the [Chromium project](https://www.chromium.org/Home), such as Google Chrome, Brave, Edge.
 
 ## Requirements
 Only tested version numbers are listed.
 
-* <a href="https://nodejs.org/en/" target="_blank">Node.js</a> (`15.4.x`)
-* <a href="https://www.python.org/downloads/" target="_blank">Python</a> (`3.9.x`)
+* [Node.js](https://nodejs.org/en/) (`15.4.x`)
+* [Python](https://www.python.org/downloads/) (`3.9.x`)
 
 ## Setup
 ### Installation
