@@ -7,7 +7,7 @@ const getStorageVal = async sValName => {
     return new Promise(resolve => {
         chrome.storage.sync.get(
             [sValName], 
-            result => resolve(result['battery_mode_enabled'])
+            result => resolve(result[sValName])
         ); 
     });
 }; // async inline function getStorageVal()
