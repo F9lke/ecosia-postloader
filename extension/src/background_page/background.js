@@ -34,7 +34,7 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 
     /* If the connection has been established */
-    socket.once('connect', () => {
+    socket.on('connect', () => {
         chrome.storage.sync.set({ con_marker_markup: "&#128994;"});
 
         // Listen for update on clicked ads on pass them to the content script

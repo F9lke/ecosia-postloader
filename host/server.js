@@ -40,7 +40,7 @@ io.on('connection', socket => {
   	});
 
 	// Instantiate a selenium driver, let it browse the query and click on ads
-  	socket.on('issueQuery', async query => {
+  	socket.on('issueQuery', query => {
 		limiter.schedule(runSeleniumAdClicker, query)
 			.then(aClickedHrefs => {
 				socket.emit("clickedHrefs", JSON.stringify(aClickedHrefs));
