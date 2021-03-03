@@ -8,6 +8,8 @@ window.onload = async () => {
     const con_marker = document.querySelector(".host-connection-marker");
     const log_area = document.querySelector("code");
 
+    const log_showhide = document.querySelector(".ad-log-showhide");
+
     // Set initial values for ui elements
     chrome.storage.sync.get(null, result => {
         // Checked status for the battery mode
@@ -48,7 +50,13 @@ window.onload = async () => {
     }
 
     // Clicked ads log show/hide toggle
-    document.querySelector(".ad-log-showhide").onclick = () => log_area.parentElement.classList.toggle("expanded");
+    log_showhide.onclick = () => {
+        log_showhide.innerHTML = log_showhide.innerHTML.includes("Show")
+            ? log_showhide.innerHTML.replace("Show", "Hide")
+            : log_showhide.innerHTML.replace("Hide", "Show");
+
+        log_area.parentElement.classList.toggle("expanded");
+    };
 
     /**
      * Formats and writes the ads clicked log
