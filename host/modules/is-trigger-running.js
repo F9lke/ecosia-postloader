@@ -15,8 +15,20 @@ module.exports = function isTriggerRunning() {
 
             return !!(nProcesses > 0);
 
-        case "win32":
-            // TODO
-            break;
+        case "windows":
+            return [
+                sTriggerName,
+                sTriggerName.toLowerCase(),
+                sTriggerName.split(" ")[0],
+                sTriggerName.split(" ")[0].toLowerCase()
+            ].map(s => {
+                try {
+                    return parseInt(
+                        execSync(`(tasklist /FI "IMAGENAME eq ${s}.exe" 2>NUL | find /I /N "${s}.exe">NUL) && (if "%ERRORLEVEL%"=="0" echo 1)`) || false
+                    );
+                } catch(e) {
+                    return false;
+                }
+            }).filter(Boolean).length > 0;
     }
 }; // function isTriggerRunning()

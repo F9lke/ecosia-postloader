@@ -19,7 +19,7 @@ const socketPort = 3009; // Non-standardized port in common tcp/udp port range i
 
 // Start the socket server
 socketServer.listen(socketPort, () => { 
-    console.log(`Socket server is listening on : ${socketPort}`) 
+    console.log(`Socket server is listening on : ${socketPort}`);
 });
 
 // Init socket connection
@@ -30,9 +30,7 @@ io.on('connection', socket => {
 
     	if(tryToReconnect) {
 			do {
-				setTimeout(() => {
-					socket.connect();
-				}, 1000);
+				setTimeout(() => socket.connect(), 1000);
 			} while(isTriggerRunning());
     	} else {
       		process.exit();

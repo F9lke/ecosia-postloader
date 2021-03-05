@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "/usr/local/bin/node server.js"
+    "start": "npm run rel_start || npm run abs_start",
+    "abs_start": "/usr/local/bin/node server.js",
+    "rel_start": "node server.js"
   },
   "author": "Florian Götzrath",
   "license": "MIT",

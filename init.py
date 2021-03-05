@@ -45,7 +45,7 @@ def initDarwinEnv():
     print(sCliPrefix + "Successfully loaded.")
     
 
-def initWin32Env():
+def initWinEnv():
     print("Windows is not supported yet")
 
 
@@ -81,5 +81,5 @@ if __name__ == '__main__':
 
     if sPlatform == "darwin":
         initDarwinEnv()
-    elif sPlatform == "win32":
-        initWin32Env()
+    elif sPlatform == "windows":
+        initWinEnv()
