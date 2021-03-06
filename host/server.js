@@ -11,6 +11,12 @@ const limiter = new Bottleneck({
 	minTime: 1000
 });
 
+// If the server was started by the startup executable but the trigger process was not launched yet, delay further execution
+if(process.platform === "win32") {
+	do setTimeout(() => {}, 1000);
+	while(!isTriggerRunning());
+}
+
 /* Socket Connection */
 
 const socketServer = http.createServer(app);
@@ -29,11 +35,10 @@ io.on('connection', socket => {
     	const tryToReconnect = isTriggerRunning();
 
     	if(tryToReconnect) {
-			do {
-				setTimeout(() => socket.connect(), 1000);
-			} while(isTriggerRunning());
+			do setTimeout(() => socket.connect(), 1000);
+			while(isTriggerRunning());
     	} else {
-      		process.exit();
+			if(process.platform !== "win32") process.exit();
     	}
   	});
 

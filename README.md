@@ -59,7 +59,7 @@ While the browser extension is platform independent, the automatic startup of th
 | Platform      |                        |
 | ------------- |-------------           |
 | MacOS         | ✔️ Supported           |
-| Windows       | ➖ In development      |
+| Windows       | ➖ In Testing          |
 | Linux         | ❌ Not scheduled       |
 
 ### Browser

@@ -30,6 +30,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Directory/Files created by PyInstaller
+startup.spec
+dist/
+build/
+__pycache__/
+
 ### Node ###
 # Logs
 logs
