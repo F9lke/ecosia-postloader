@@ -32,6 +32,7 @@ Temporary Items
 
 # Directory/Files created by PyInstaller
 startup.spec
+startup_tmp.spec
 dist/
 build/
 __pycache__/

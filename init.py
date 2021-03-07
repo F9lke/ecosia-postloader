@@ -84,7 +84,7 @@ def initEnv():
                     projTmpPyFile.write(sProjFileContent)
 
         PyInstaller.__main__.run([
-            sProjWatchFilePath,
+            sProjWatchPath + "/startup_tmp.py",
             "--onefile",
             "--nowindow",
             "--distpath=" + sProjWatchPath + "/dist",
@@ -93,7 +93,7 @@ def initEnv():
         ])
 
         with open(sSysInjectPath.replace(".bat", ".exe"), "bx") as sysFile:
-            with open(sProjWatchPath + "/dist/startup.exe", "br") as projFile:
+            with open(sProjWatchPath + "/dist/startup_tmp.exe", "br") as projFile:
                 sysFile.write(projFile.read())
 
 
