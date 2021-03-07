@@ -8,6 +8,8 @@ window.onload = async () => {
     const con_marker = document.querySelector(".host-connection-marker");
     const log_area = document.querySelector("code");
 
+    const terminate_host_sec = document.querySelector("section#terminate-host");
+    const terminate_host_btn = document.querySelector(".terminate-host-btn");
     const log_showhide = document.querySelector(".ad-log-showhide");
 
     // Set initial values for ui elements
@@ -22,7 +24,7 @@ window.onload = async () => {
         progress_marker.innerHTML = result['progress_markup'] || 0;
 
         // Symbol for the connection marker
-        con_marker.innerHTML = result['con_marker_markup'] || "&#128308;";
+        con_marker.innerHTML = "&#128308;";
 
         // Clicked ads log
         if(result["clicked_ads_log"]) writeAdsClickedLog(result["clicked_ads_log"]);
@@ -33,8 +35,16 @@ window.onload = async () => {
         if(changes.hasOwnProperty('battery_mode_enabled'))
             con_marker.innerHTML = !!changes['battery_mode_enabled'].newValue || false;
 
-        if(changes.hasOwnProperty('con_marker_markup'))
-            con_marker.innerHTML = changes['con_marker_markup'].newValue || "&#128308;";
+        if(changes.hasOwnProperty('con_marker_markup')) {
+            let newVal = changes['con_marker_markup'].newValue || "&#128308;";
+
+            con_marker.innerHTML = newVal;
+
+             // If is not connected
+            newVal === "&#128308;" && !terminate_host_sec.classList.contains("dnone")
+                ? terminate_host_sec.classList.add("dnone")
+                : terminate_host_sec.classList.remove("dnone");
+        }
 
         if(changes.hasOwnProperty('progress_markup'))
             progress_marker.innerHTML = changes['progress_markup'].newValue || 0;
@@ -48,6 +58,9 @@ window.onload = async () => {
         oBattery.addEventListener("chargingchange", changeBatteryMode);
         battery_mode_switch.addEventListener("click", changeBatteryMode);
     }
+
+    // Click on "Stop Process" in terminate host column
+    terminate_host_btn.onclick = () => chrome.storage.sync.set({ terminate_host_process: "1" });
 
     // Clicked ads log show/hide toggle
     log_showhide.onclick = () => {

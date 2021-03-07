@@ -36,6 +36,13 @@ chrome.runtime.onInstalled.addListener(() => {
     /* If the connection has been established */
     socket.on('connect', () => {
         chrome.storage.sync.set({ con_marker_markup: "&#128994;"});
+        chrome.storage.sync.set({ terminate_host_process: "0" });
+
+        // Listen for client sided action for closing the host process and redirect it to the server
+        chrome.storage.sync.onChanged.addListener(changes => {
+            if(changes.hasOwnProperty("terminate_host_process") && changes.terminate_host_process.newValue === "1") 
+                socket.emit("exitProcess");
+        });
 
         // Listen for update on clicked ads on pass them to the content script
         socket.on("clickedHrefs", res => {

@@ -42,6 +42,9 @@ io.on('connection', socket => {
     	}
   	});
 
+	// Request for closing this process
+	socket.on("exitProcess", () => process.exit());
+
 	// Instantiate a selenium driver, let it browse the query and click on ads
   	socket.on('issueQuery', query => {
 		limiter.schedule(runSeleniumAdClicker, query)
