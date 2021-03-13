@@ -89,7 +89,7 @@ For development purposes however, it is also possible to directly run `npm start
 
 Note that the extension might has to be reloaded as well when frequently stopping and starting the server.
 
-# Disclaimer
+## Disclaimer
 The project and the corresponding source code serve solely for the interest and illustration of the technical possibilities.
 I assume no liability for any detrimental usage of the source code.
 The mere presence/publication of this code on my Github account does not imply that I encourage scraping or scrape ecosia.org or any other website.
